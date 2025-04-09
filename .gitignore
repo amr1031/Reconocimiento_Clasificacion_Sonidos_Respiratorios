@@ -1,0 +1,45 @@
+# Archivos generados por Python
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+env/
+venv/
+.venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Archivos de logs y reportes
+*.log
+*.tmp
+htmlcov/
+.coverage
+.cache/
+
+# Registros de pruebas
+.tox/
+.pytest_cache/
+
+# Archivos generados por LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.synctex.gz
+
+# Archivos temporales de editores/IDEs
+.vscode/
+.idea/
+
+# Otros archivos o carpetas (para ir personalizando según vaya usando más herramientas)
+node_modules/
