@@ -7,4 +7,4 @@ librosa
 scikit-learn
 joblib
 fpdf
-sounddevice
+soundfile
