@@ -37,6 +37,13 @@ El presente trabajo desarrolla una aplicación web interactiva de auscultación 
 Para la clasificación acústica se emplea un modelo de redes neuronales convolucionales optimizado localmente, cuyas probabilidades promedio por paciente alimentan un clasificador Random Forest ajustado con validación cruzada estratificada. Este enfoque híbrido mejora métricas como la F1–macro y reduce los tiempos de inferencia, además de generar informes clínicos automáticos en PDF y almacenar historiales en SQLite, garantizando una herramienta abierta, reproducible y fácil de usar para profesionales y usuarios sin experiencia técnica.  
 
 
+## Sección 2: Palabras clave / Keywords
+
+**Palabras clave:**  
+Auscultación digital, sonidos respiratorios, mel-espectrograma, Streamlit, clasificación acústica, diagnóstico clínico, aprendizaje automático, balanceo de clases, SMOTE, Random Forest, redes neuronales convolucionales, PDF clínico, SQLite.
+
+**Keywords:**  
+Digital auscultation, respiratory sounds, mel-spectrogram, Streamlit, acoustic classification, clinical diagnosis, machine learning, class balancing, SMOTE, Random Forest, convolutional neural networks, clinical PDF, SQLite.
 
 ## Obtención del Dataset
 
