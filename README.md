@@ -1,4 +1,4 @@
-# Reconocimiento_Clasificacion_Sonidos_Respiratorios
+# Aplicación Web de Apoyo al Diagnóstico Clínico a partir de Sonidos Respiratorios
 <img src='INPUT/IMAGENES/escudoUBU.jpeg' align="right" height="120" />
 
 > Repositorio del Trabajo Fin de Grado para el grado de Ingeniería de la Salud, Universidad de Burgos (UBU), 2024-2025;
