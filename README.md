@@ -7,28 +7,23 @@
 > - 4º INGENERIA DE LA SALUD / [TRABAJO FIN DE GRADO.](https://ubuvirtual.ubu.es/course/view.php?id=15233)[🎓](https://emojipedia.org/shortcodes) 
 
 
-
-
 ## Índice
 
 1.  [Sección 1: Resumen / Abstract](#sección-1-resumen--abstract)  
 2.  [Sección 2: Palabras clave / Keywords](#sección-2-palabras-clave--keywords)  
-3.  [Sección 3: Objetivo principal](#sección-3-objetivo-principal)  
-    3.1. [Subsección 3.1: Objetivo 1](#subsección-31-objetivo-1)  
-    3.2. [Subsección 3.2: Objetivo 2](#subsección-32-objetivo-2)  
-    3.3. [Subsección 3.3: Objetivo 3](#subsección-33-objetivo-3)  
-    3.4. [Subsección 3.4: Objetivo 4](#subsección-34-objetivo-4)  
+3.  [Sección 3: Objetivo general](#sección-3-objetivo-general)  
+4.  [Sección 4: Subobjetivos del proyecto](#sección-4-subobjetivos-del-proyecto)  
+    4.1. [Preprocesamiento y extracción de características](#subsección-41-preprocesamiento-y-extracción-de-características)  
+    4.2. [Detección acústica](#subsección-42-detección-acústica)  
+    4.3. [Clasificación clínica híbrida](#subsección-43-clasificación-clínica-híbrida)  
+    4.4. [Interfaz de usuario e informes](#subsección-44-interfaz-de-usuario-e-informes)  
 
-4.  [Sección 4: Obtención del dataset](#sección-4-obtención-del-dataset)  
-5.  [Sección 5: Despliegue de la aplicación](#sección-5-despliegue-de-la-aplicación)  
-6.  [Sección 6: Explicación de los objetivos](#sección-6-explicación-de-los-objetivos)  
-    6.1. [Subsección 6.1: Explicación Objetivo 1](#subsección-61-explicación-objetivo-1)  
-    6.2. [Subsección 6.2: Explicación Objetivo 2](#subsección-62-explicación-objetivo-2)  
-    6.3. [Subsección 6.3: Explicación Objetivo 3](#subsección-63-explicación-objetivo-3)  
-    6.4. [Subsección 6.4: Explicación Objetivo 4](#subsección-64-explicación-objetivo-4)  
-
+5.  [Sección 5: Obtención del dataset](#sección-5-obtención-del-dataset)  
+6.  [Sección 6: Despliegue de la aplicación](#sección-6-despliegue-de-la-aplicación)  
 7.  [Sección 7: Bibliografía](#sección-7-bibliografía)  
 8.  [Sección 8: Conclusión](#sección-8-conclusión)  
+ 
+
 
 ## Sección 1: Resumen / Abstract
 
@@ -44,6 +39,26 @@ Auscultación digital, sonidos respiratorios, mel-espectrograma, Streamlit, clas
 
 **Keywords:**  
 Digital auscultation, respiratory sounds, mel-spectrogram, Streamlit, acoustic classification, clinical diagnosis, machine learning, class balancing, SMOTE, Random Forest, convolutional neural networks, clinical PDF, SQLite.
+
+## Sección 3: Objetivo general
+
+Desarrollar una aplicación web interactiva que, a partir de grabaciones de sonido torácico, detecte automáticamente crepitaciones y sibilancias mediante una CNN acústica y, seguidamente, asigne un diagnóstico clínico (Sano, Infecciosa u Obstructiva) a cada paciente mediante un clasificador Random Forest, garantizando un entorno reproducible y de bajo coste.
+
+---
+
+## Sección 4: Subobjetivos del proyecto
+
+### 4.1 Preprocesamiento y extracción de características  
+Segmentar las señales en ventanas de cinco segundos, generar mel-espectrogramas normalizados y estructurar los datos para su análisis.
+
+### 4.2 Detección acústica  
+Adaptar y optimizar un modelo de CNN preentrenado para discriminar las cuatro clases de sonido (none, crackles, wheezes, both) con altas métricas de validación.
+
+### 4.3 Clasificación clínica híbrida  
+Entrenar y afinar un Random Forest sobre las probabilidades promedio de la CNN para obtener un diagnóstico interpretable y equilibrado frente al desequilibrio de clases.
+
+### 4.4 Interfaz de usuario e informes  
+Implementar una herramienta en Streamlit que permita cargar o grabar audios, visualizar resultados en tiempo real y descargar informes clínicos en PDF.  
 
 ## Obtención del Dataset
 
