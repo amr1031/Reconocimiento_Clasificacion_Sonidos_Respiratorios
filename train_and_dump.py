@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
-import os, glob
+import os
 import numpy as np
 import pandas as pd
 import joblib
@@ -16,9 +15,9 @@ from sklearn.metrics import classification_report, confusion_matrix
 from tensorflow.keras.models import load_model
 
 # 1) Rutas y directorios
-WAV_DIR    = 'INPUT/WAV'
-META_CSV   = 'metadata/diagnostics.csv'
-OUT_DIR    = 'models_group3'
+WAV_DIR  = 'INPUT/WAV'
+META_CSV = 'metadata/diagnostics.csv'
+OUT_DIR  = 'models_group3'
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # 2) Carga de metadata
@@ -52,24 +51,22 @@ for pid in df['patient_id'].unique():
         probs = cnn.predict(logspec, verbose=0)[0]
         feats.append(probs)
     if not feats:
-        feats = [[0.,0.,0.,0.]]
+        feats = [[0., 0., 0., 0.]]
     mean_feats = np.mean(np.vstack(feats), axis=0)
     records.append([pid, *mean_feats])
 
-feat_cols = ['patient_id','pct_none','pct_crackle','pct_wheeze','pct_both']
+feat_cols = ['patient_id', 'pct_none', 'pct_crackle', 'pct_wheeze', 'pct_both']
 df_feat = pd.DataFrame(records, columns=feat_cols)
 
 # 5) Preparación de X, y y codificador
 le = LabelEncoder().fit(df['group3'])
-df_full = df_feat.merge(df[['patient_id','group3']], on='patient_id')
+df_full = df_feat.merge(df[['patient_id', 'group3']], on='patient_id')
 X = df_full[feat_cols[1:]].values
 y = le.transform(df_full['group3'])
 
 # 6) Configuración inicial del Random Forest
 base_clf = RandomForestClassifier(
-    n_estimators=300,
     criterion='entropy',
-    min_samples_leaf=2,
     class_weight='balanced_subsample',
     oob_score=True,
     n_jobs=-1,
@@ -78,10 +75,9 @@ base_clf = RandomForestClassifier(
 
 # 7) Búsqueda de hiperparámetros con GridSearchCV y validación cruzada estratificada
 param_grid = {
-    'n_estimators': [100,200,300],
-    'criterion': ['entropy'],
-    'min_samples_leaf': [2],
-    'class_weight': ['balanced_subsample']
+    'n_estimators': [100, 200, 300],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 4]
 }
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 grid = GridSearchCV(
@@ -97,11 +93,11 @@ clf = grid.best_estimator_
 print(f"Mejores parámetros: {grid.best_params_}")
 print(f"Mejor F1–macro (CV): {grid.best_score_:.4f}\n")
 
-# 8) Entrenamiento final sobre todo el conjunto y métricas OOB
-tclf = clf.fit(X, y)
+# 8) Entrenamiento final y métricas OOB
+clf.fit(X, y)
 print(f"OOB score: {clf.oob_score_:.4f}\n")
 
-# Métricas finales en todo el conjunto
+# 9) Métricas finales en todo el conjunto
 y_pred = clf.predict(X)
 print("=== Métricas finales ===")
 print(classification_report(
@@ -112,7 +108,7 @@ print(classification_report(
 print("Matriz de confusión:")
 print(confusion_matrix(y, y_pred))
 
-# 9) Serialización de artefactos
+# 10) Serialización de artefactos
 joblib.dump(clf, os.path.join(OUT_DIR, 'rf_group3_tuned.pkl'))
 joblib.dump(le, os.path.join(OUT_DIR, 'le_group3.pkl'))
 joblib.dump(feat_cols[1:], os.path.join(OUT_DIR, 'feature_cols_group3.pkl'))
