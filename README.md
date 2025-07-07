@@ -44,7 +44,6 @@ Digital auscultation, respiratory sounds, mel-spectrogram, Streamlit, acoustic c
 
 Desarrollar una aplicación web interactiva que, a partir de grabaciones de sonido torácico, detecte automáticamente crepitaciones y sibilancias mediante una CNN acústica y, seguidamente, asigne un diagnóstico clínico (Sano, Infecciosa u Obstructiva) a cada paciente mediante un clasificador Random Forest, garantizando un entorno reproducible y de bajo coste.
 
----
 
 ## Sección 4: Subobjetivos del proyecto
 
@@ -60,12 +59,22 @@ Entrenar y afinar un Random Forest sobre las probabilidades promedio de la CNN p
 ### 4.4 Interfaz de usuario e informes  
 Implementar una herramienta en Streamlit que permita cargar o grabar audios, visualizar resultados en tiempo real y descargar informes clínicos en PDF.  
 
-## Obtención del Dataset
+## Sección 5: Obtención del Dataset
 
 Debido al tamaño y a las restricciones de la licencia, el dataset no se incluye directamente en este repositorio. Para obtenerlo, sigue estos pasos:
 
 1. Regístrate o inicia sesión en [Kaggle](https://www.kaggle.com).
 2. Accede a la [Respiratory Sound Database](https://www.kaggle.com/datasets/vbookshelf/respiratory-sound-database) y haz clic en "Download" para descargar el archivo.
 3. Descomprime el archivo descargado.
+
+
+## Sección 6: Despliegue de la aplicación
+
+### Streamlit Cloud
+
+1. Abre tu navegador y visita  
+   (https://aplicacionsonidostfg-u7tde8xl7eo65sxusmcqjv.streamlit.app/)  
+2. Espera a que cargue; no es necesario instalar nada.  
+3. Para probar sin necesidad de tener tus propios audios, descarga los archivos WAV de ejemplo que encontrarás en la carpeta **Audios Muestra** de este repositorio. A continuación, en la aplicación haz clic en **Subir archivo**, selecciona uno de los WAV descargado y pulsa **Analizar**.  
 
 
