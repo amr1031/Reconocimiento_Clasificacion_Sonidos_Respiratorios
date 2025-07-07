@@ -27,10 +27,12 @@
 
 ## Sección 1: Resumen / Abstract
 
-El presente trabajo desarrolla una aplicación web interactiva de auscultación digital que, mediante aprendizaje automático, procesa grabaciones de sonido torácico en ventanas de cinco segundos, extrae características espectrales y predice la presencia de crepitaciones y sibilancias. La interfaz, implementada con Streamlit, permite grabar o cargar archivos WAV, visualizar mel-espectrogramas y obtener resultados en tiempo real, clasificando cada caso en tres categorías clínicas: Sano, Infecciosa u Obstructiva.
+El presente Trabajo de Fin de Grado aborda el desarrollo de una aplicación web interactiva de auscultación digital para el análisis y diagnóstico de patologías respiratorias a partir de grabaciones de sonido torácico. Aprovechando técnicas de aprendizaje automático, el sistema procesa señales de audio en ventanas de cinco segundos, extrae características mediante transformaciones espectrales y genera predicciones sobre la presencia de crepitaciones y sibilancias, así como un diagnóstico clínico en tres categorías (Sano, Infecciosa y Obstructiva). La interfaz, implementada con Streamlit, permite grabar o cargar archivos WAV, visualizar mel-espectrogramas y obtener resultados en tiempo real.
 
-Para la clasificación acústica se emplea un modelo de redes neuronales convolucionales optimizado localmente, cuyas probabilidades promedio por paciente alimentan un clasificador Random Forest ajustado con validación cruzada estratificada. Este enfoque híbrido mejora métricas como la F1–macro y reduce los tiempos de inferencia, además de generar informes clínicos automáticos en PDF y almacenar historiales en SQLite, garantizando una herramienta abierta, reproducible y fácil de usar para profesionales y usuarios sin experiencia técnica.  
+Para la clasificación acústica se integró un modelo de redes neuronales convolucionales previamente entrenado, adaptándolo al entorno local y optimizando su rendimiento mediante ajustes de muestreo y serialización. A nivel de paciente, las probabilidades promedio de la CNN se emplearon como vectores de entrada para un clasificador Random Forest afinado mediante ponderación interna de clases y búsqueda de hiperparámetros con validación cruzada estratificada. Este enfoque híbrido demostró una mejora notable en métricas como F1–macro y tiempos de inferencia, manteniendo robustez frente al desequilibrio entre categorías.
 
+
+La solución resultante, abierta y reproducible, incluye generación automática de informes clínicos en PDF y almacenamiento de historiales en SQLite. Sus hallazgos ponen de manifiesto la viabilidad de las herramientas de inteligencia artificial para apoyar la auscultación tradicional, ofreciendo a profesionales de la salud y a usuarios sin conocimientos técnicos una experiencia intuitiva y fiable para la detección precoz de anomalías respiratorias.
 
 ## Sección 2: Palabras clave / Keywords
 
