@@ -20,8 +20,7 @@
 
 5.  [Sección 5: Obtención del dataset](#sección-5-obtención-del-dataset)  
 6.  [Sección 6: Despliegue de la aplicación](#sección-6-despliegue-de-la-aplicación)  
-7.  [Sección 7: Bibliografía](#sección-7-bibliografía)  
-8.  [Sección 8: Conclusión](#sección-8-conclusión)  
+7.  [Sección 8: Conclusión](#sección-8-conclusión)  
  
 
 
@@ -80,6 +79,6 @@ Debido al tamaño y a las restricciones de la licencia, el dataset no se incluye
 3. Para probar sin necesidad de tener tus propios audios, descarga los archivos WAV de ejemplo que encontrarás en la carpeta **Audios Muestra** de este repositorio. A continuación, en la aplicación haz clic en **Subir archivo**, selecciona uno de los WAV descargado y pulsa **Analizar**.  
 
 
-## Sección 8: Conclusión
+## Sección 7: Conclusión
 
 Este repositorio recopila de forma organizada todo el código fuente de la aplicación web desarrollada en el TFG. Está diseñado para que cualquier persona pueda clonar el proyecto, instalarlo y ejecutarlo sin complicaciones, garantizando la transparencia y reproducibilidad de cada componente. De este modo, se facilita el acceso y la comprensión de la solución propuesta y sus resultados.  
